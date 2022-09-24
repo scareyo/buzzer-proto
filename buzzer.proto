@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package buzzer;
+
+service Buzzer {
+    rpc OpenDoor (OpenDoorRequest) returns (OpenDoorReply) {}
+    rpc RingDoor (RingDoorRequest) returns (RingDoorReply) {}
+}
+
+message OpenDoorRequest {
+    string message = 1;
+}
+
+message OpenDoorReply {
+    string message = 1;
+}
+
+message RingDoorRequest {
+    string message = 1;
+}
+
+message RingDoorReply {
+    string message = 1;
+}
