@@ -3,8 +3,8 @@ syntax = "proto3";
 package buzzer;
 
 service Buzzer {
-    rpc OpenDoor (OpenDoorRequest) returns (OpenDoorReply) {}
-    rpc RingDoor (RingDoorRequest) returns (RingDoorReply) {}
+    rpc ListenDoor (ListenDoorRequest) returns (stream RingDoorReply);
+    rpc OpenDoor (OpenDoorRequest) returns (OpenDoorReply);
 }
 
 message OpenDoorRequest {
@@ -15,7 +15,7 @@ message OpenDoorReply {
     string message = 1;
 }
 
-message RingDoorRequest {
+message ListenDoorRequest {
     string message = 1;
 }
 
